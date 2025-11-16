@@ -1,0 +1,43 @@
+log:
+    filename: now
+    filename_prefix: Ahar_mk-dataset
+    filepath: None
+    format: '%(asctime)s - %(levelname)s - %(message)s'
+    level: INFO
+    mode: both
+mk_dataset:
+    autolabeling: false
+    cut_time:
+        before: 10
+        after: 60
+    filter:
+        apply: false
+        high: 10
+        low: 1
+    noisepad:
+        after: 0
+        apply: false
+        before: 0
+        std_end: 2
+        std_start: 2
+    parameters:
+        component_order: ZNE
+        dimension_order: CW
+        instrument_response: not restituted
+        measurement: velocity
+        sampling_rate: 100
+        unit: counts
+    path:
+        inputs:
+            catalog: F:\Local_Network_Data-Raw\IIEES_2006-2023\BIN_2004_2024-Cleaned.out
+            network_details: F:\Network_Details\IIEES-BIN.csv
+            stream_pattern: '*/{time.year}-{time.month:02}-{time.day:02}*'
+            stream_root: F:\Local_Network_Data-Raw\IIEES_2006-2023\Waveforms
+        outputs:
+            dataset: F:\DataSets-Local\IIEES-BIN-Dataset_2025-08-14T15-32-55
+            log:
+                filename: now
+    save_streams: false
+    zero_pad:
+        after: 0
+        before: 0
