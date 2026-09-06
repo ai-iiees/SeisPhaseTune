@@ -55,7 +55,14 @@ phase_dict = srsb.dataset.build_phase_mapper(
 )
 
 df = dataset.metadata.copy()
-
+df.drop(
+    labels=[
+        "index",
+        # "level_0"
+    ],
+    axis=1,
+    inplace=True,
+)
 phases = ['P', 'S']
 key_template = "Manual_Pick_{phase_hint}"
 
